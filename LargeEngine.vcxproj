@@ -99,12 +99,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\object.cpp" />
+    <ClCompile Include="src\core\Transform.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\object.h" />
-    <ClInclude Include="Transform.h" />
+    <ClInclude Include="src\core\Transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
