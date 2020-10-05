@@ -1,0 +1,24 @@
+{
+  "env": {
+    "myDefaultIncludePath": ["D:\\cygwin64\\usr\\include"]
+  },
+  "configurations": [
+    {
+      "name": "Windows",
+      "intelliSenseMode": "msvc-x64",
+      "includePath": [
+        "${myDefaultIncludePath}",
+        "D:\\cygwin64\\usr\\include\\**",
+        "D:\\cygwin64\\usr\\include\\c++\\v1",
+        "D:\\vulkan\\1.2.148.1\\Include\\**",
+        "D:\\libraries\\glm\\**",
+        "D:\\libraries\\glfw\\**"
+      ],
+      "compilerPath": "",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "compileCommands": ""
+    }
+  ],
+  "version": 4
+}
