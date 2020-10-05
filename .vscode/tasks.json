@@ -34,7 +34,7 @@
     {
       "label": "Windows compiler build",
       "type": "shell",
-      "command": "cl.exe",
+      "command": "cl",
       "args": [
         "/Zi",
         "/EHsc",
