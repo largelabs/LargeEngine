@@ -10,6 +10,16 @@
 *.userosscache
 *.sln.docstates
 
+# Ignore VStudio/VSCode config files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+.vs/
+.vscode/
+
+# Ignore build folder.
+build/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
