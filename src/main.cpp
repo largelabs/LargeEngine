@@ -9,31 +9,37 @@
 
 #include <iostream>
 
-int main()
+void logVkExtensionProperties()
 {
-  std::cout << "Initializing LE environment:\n";
-  glfwInit();
-
   VkExtensionProperties *vk_props = NULL;
 
-  glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-  GLFWwindow *window = glfwCreateWindow(1024, 768, "Vulkan window", nullptr, nullptr);
-
   uint32_t extensionCount = 0;
-  vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
+  vkEnumerateInstanceExtensionProperties(NULL, &extensionCount, NULL);
 
   vk_props = (VkExtensionProperties *)realloc(vk_props, extensionCount * sizeof(VkExtensionProperties));
 
   vkEnumerateInstanceExtensionProperties(NULL, &extensionCount, vk_props);
 
-  std::cout << extensionCount << " extensions supported\n";
+  std::cout << extensionCount << " extensions supported on this system" << std::endl;
+  std::cout << "_____________________________" << std::endl;
 
-  for (uint32_t i = 0; i < extensionCount; i++) {
-        VkExtensionProperties *props = &vk_props[i];
-        std::cout << props->extensionName << ":" << std::endl;
-        std::cout << "\tVersion: " << props->specVersion << std::endl;
-        std::cout << std::endl << std::endl;
-    }
+  for (uint32_t i = 0; i < extensionCount; i++) 
+  {
+    VkExtensionProperties *props = &vk_props[i];
+    std::cout << props->extensionName << ":" << std::endl;
+    std::cout << "\tVersion: " << props->specVersion << std::endl;
+    std::cout << "_____________________________" << std::endl;
+  }
+}
+
+int main()
+{
+  std::cout << "Initializing LE environment:\n";
+  glfwInit();
+  logVkExtensionProperties();
+
+  glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+  GLFWwindow *window = glfwCreateWindow(1024, 768, "Vulkan window", nullptr, nullptr);
 
   while (!glfwWindowShouldClose(window))
   {
@@ -46,3 +52,5 @@ int main()
 
   return 0;
 }
+
+
