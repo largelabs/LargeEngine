@@ -9,7 +9,7 @@ class Transform
 {
 
 private:
-	glm::mat4x4 matTRS, matPos, matRot, matSc;
+	//glm::mat4x4 matTRS, matPos, matRot, matSc;
 
 protected:
 
@@ -24,7 +24,6 @@ public:
 	/// DTOR
 	/// </summary>
 	virtual ~Transform();
-
 
 	void SetPosition(glm::vec3 i_position);
 
