@@ -1,48 +1,49 @@
 {
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "clang++ compiler build",
+      "label": "[CLANG] - DEBUG Compilation",
       "type": "shell",
-      "command": "clang++",
+      "command": "clang-cl",
       "args": [
-        "-v",
-        "-std=c++17",
-        "--include-directory=D:\\libraries\\glfw\\include\\",
-        "--include-directory=D:\\libraries\\glm\\",
-        "--include-directory=D:\\vulkan\\1.2.148.1\\Include\\",
-        "--include-directory=D:\\vulkan\\1.2.148.1\\Lib\\",
-        "--library-directory=D:\\vulkan\\1.2.148.1\\Include\\",
-        "--library-directory=D:\\vulkan\\1.2.148.1\\Lib\\",
-        "--library-directory=D:\\libraries\\glm\\",
-        "--library-directory=D:\\libraries\\glfw\\lib-mingw-w64\\",
-        "--library-directory=D:\\libraries\\glfw\\lib-vc2019\\",
-        "-g",
         "${file}",
-        "-o",
-        "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe"
+        "/Z7",
+        "/MDd",
+        "/W4",
+        "/EHsc",
+        "/std:c++17",
+        "/Od",
+        "/ID:\\vulkan\\1.2.148.1\\Include\\",
+        "/ID:\\libraries\\glm\\",
+        "/ID:\\libraries\\glfw\\include\\",
+        "/nologo",
+        "/o",
+        "build/debug/${fileBasenameNoExtension}.exe",
+        "/link",
+        "/NODEFAULTLIB:msvcrt",
+        "/LIBPATH:D:\\vulkan\\1.2.148.1\\Lib\\",
+        "/LIBPATH:D:\\libraries\\glfw\\lib-vc2019\\",
+        "vulkan-1.lib",
+        "glfw3.lib",
+        "kernel32.lib",
+        "user32.lib",
+        "gdi32.lib",
+        "winspool.lib",
+        "comdlg32.lib",
+        "advapi32.lib",
+        "shell32.lib",
+        "ole32.lib",
+        "oleaut32.lib",
+        "uuid.lib",
+        "odbc32.lib",
+        "odbccp32.lib"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
       },
-      "problemMatcher": ["$gcc"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "label": "Windows compiler build",
-      "type": "shell",
-      "command": "cl",
-      "args": [
-        "/Zi",
-        "/EHsc",
-        "/Fe:",
-        "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
-        "${file}"
-      ],
-      "problemMatcher": ["$msCompile"],
+      "problemMatcher":"$gcc",
       "group": {
         "kind": "build",
         "isDefault": true
