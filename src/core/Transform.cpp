@@ -1,8 +1,8 @@
-/*#include "Transform.h"
+#include "Transform.hpp"
 
 Transform::Transform()
 {
-    matTRS = matPos = matRot = matSc = glm::identity;
+   
 
 }
 
@@ -16,7 +16,7 @@ void Transform::SetPosition(glm::vec3 i_position)
 
 }
 
-void Transform::SetRotation(glm::qua i_rotation)
+void Transform::SetRotation(glm::quat i_rotation)
 {
     
 }
@@ -31,7 +31,7 @@ glm::vec3 Transform::GetPosition()
 
 }
 
-glm::qua Transform::GetRotation()
+glm::quat Transform::GetRotation()
 {
 
 }
@@ -44,4 +44,4 @@ glm::vec3 Transform::GetScale()
 glm::mat4x4 Transform::GetTRS()
 {
 
-}*/
+}

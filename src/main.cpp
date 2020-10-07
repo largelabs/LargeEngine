@@ -29,6 +29,7 @@ void logVkExtensionProperties()
     std::cout << "_____________________________" << std::endl;
   }
 
+
   free(vk_props);
 }
 
