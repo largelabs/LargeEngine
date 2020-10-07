@@ -28,6 +28,8 @@ void logVkExtensionProperties()
     std::cout << "\tVersion: " << props->specVersion << std::endl;
     std::cout << "_____________________________" << std::endl;
   }
+
+  free(vk_props);
 }
 
 int main()
