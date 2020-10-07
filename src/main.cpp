@@ -36,7 +36,14 @@ void logVkExtensionProperties()
 int main()
 {
   std::cout << "Initializing LE environment:\n";
-  glfwInit();
+
+  if (false == glfwInit())
+  {
+    std::cout << "Eroor initializing GLFW" << std::endl;
+    system("pause");
+    return 0;
+  }
+
   logVkExtensionProperties();
 
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
