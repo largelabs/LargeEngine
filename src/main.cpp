@@ -11,12 +11,10 @@
 
 void logVkExtensionProperties()
 {
-  VkExtensionProperties *vk_props = NULL;
-
   uint32_t extensionCount = 0;
   vkEnumerateInstanceExtensionProperties(NULL, &extensionCount, NULL);
 
-  vk_props = (VkExtensionProperties *)realloc(vk_props, extensionCount * sizeof(VkExtensionProperties));
+  VkExtensionProperties *vk_props = (VkExtensionProperties *)malloc(extensionCount * sizeof(VkExtensionProperties));
 
   vkEnumerateInstanceExtensionProperties(NULL, &extensionCount, vk_props);
 
