@@ -39,7 +39,7 @@ int main()
 
   if (false == glfwInit())
   {
-    std::cout << "Eroor initializing GLFW" << std::endl;
+    std::cout << "Error initializing GLFW" << std::endl;
     system("pause");
     return 0;
   }
@@ -60,5 +60,3 @@ int main()
 
   return 0;
 }
-
-
