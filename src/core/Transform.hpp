@@ -2,9 +2,6 @@
 #include <glm/mat4x4.hpp>
 #include<glm/gtc/quaternion.hpp>
 
-
-
-
 class Transform
 {
 
@@ -39,4 +36,3 @@ public:
 
 	glm::mat4x4 GetTRS();
 };
-
