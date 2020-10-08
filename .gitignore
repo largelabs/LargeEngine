@@ -16,6 +16,8 @@
 *.vcxproj.filters
 .vs/
 .vscode/
+/.vscode
+
 
 # Ignore build folder.
 build/
